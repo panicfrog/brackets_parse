@@ -18,6 +18,7 @@ std::vector<size_t> find_brackets_positions(const std::string& json) {
     }
 
     std::vector<size_t> positions;
+    positions.reserve(_json.size() / 6);
     __m256i left_bracket = _mm256_set1_epi8('{');
     __m256i right_bracket = _mm256_set1_epi8('}');
 
