@@ -12,7 +12,7 @@ void get_indexes(std::vector<size_t>& results, const uint8x16_t& bit_result, siz
     uint64_t bitset[2];
     vst1q_u64(bitset, x1);
 
-    for (int idx = 0; idx < 2; idx++) {
+    for (int idx = 0; idx < 2; ++idx) {
         while (bitset[idx]) {
             auto mask = __builtin_ctzll(bitset[idx]);
             size_t position = (mask / 8) + (idx * 8);
